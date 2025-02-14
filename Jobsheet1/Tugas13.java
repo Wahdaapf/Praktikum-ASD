@@ -2,13 +2,15 @@ import java.util.Scanner;
 
 public class Tugas13 {
     
-    public static void tampilkanJadwal(String[] namaMatkul, int[] sks, int[] semester, String[] hariKuliah) {
+    static Scanner scanner = new Scanner(System.in);
+
+    static void tampilkanJadwal(String[] namaMatkul, int[] sks, int[] semester, String[] hariKuliah) {
         for (int i = 0; i < namaMatkul.length; i++) {
             System.out.println(namaMatkul[i] + " | SKS: " + sks[i] + " | Semester: " + semester[i] + " | Hari: " + hariKuliah[i]);
         }
     }
 
-    public static void tampilkanJadwalByHari(String[] namaMatkul, int[] sks, int[] semester, String[] hariKuliah, String hari) {
+    static void tampilkanJadwalByHari(String[] namaMatkul, int[] sks, int[] semester, String[] hariKuliah, String hari) {
         boolean ditemukan = false;
         for (int i = 0; i < namaMatkul.length; i++) {
             if (hariKuliah[i].equalsIgnoreCase(hari)) {
@@ -21,7 +23,7 @@ public class Tugas13 {
         }
     }
 
-    public static void tampilkanJadwalBySemester(String[] namaMatkul, int[] sks, int[] semester, String[] hariKuliah, int sem) {
+    static void tampilkanJadwalBySemester(String[] namaMatkul, int[] sks, int[] semester, String[] hariKuliah, int sem) {
         boolean ditemukan = false;
         for (int i = 0; i < namaMatkul.length; i++) {
             if (semester[i] == sem) {
@@ -34,7 +36,7 @@ public class Tugas13 {
         }
     }
 
-    public static void cariMataKuliah(String[] namaMatkul, int[] sks, int[] semester, String[] hariKuliah, String cariMatkul) {
+    static void cariMataKuliah(String[] namaMatkul, int[] sks, int[] semester, String[] hariKuliah, String cariMatkul) {
         boolean ditemukan = false;
         for (int i = 0; i < namaMatkul.length; i++) {
             if (namaMatkul[i].equalsIgnoreCase(cariMatkul)) {
@@ -47,18 +49,7 @@ public class Tugas13 {
         }
     }
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Masukkan jumlah mata kuliah: ");
-        int n = scanner.nextInt();
-        scanner.nextLine(); 
-
-        String[] namaMatkul = new String[n];
-        int[] sks = new int[n];
-        int[] semester = new int[n];
-        String[] hariKuliah = new String[n];
-
+    static void tambahMataKuliah(String[] namaMatkul, int[] sks, int[] semester, String[] hariKuliah, int n) {
         for (int i = 0; i < n; i++) {
             System.out.println("\nMasukkan data mata kuliah ke-" + (i + 1));
             System.out.print("Nama Mata Kuliah: ");
@@ -71,6 +62,20 @@ public class Tugas13 {
             System.out.print("Hari Kuliah: ");
             hariKuliah[i] = scanner.nextLine();
         }
+    }
+
+    public static void main(String[] args) {
+        
+        System.out.print("Masukkan jumlah mata kuliah: ");
+        int n = scanner.nextInt();
+        scanner.nextLine(); 
+
+        String[] namaMatkul = new String[n];
+        int[] sks = new int[n];
+        int[] semester = new int[n];
+        String[] hariKuliah = new String[n];
+
+        tambahMataKuliah(namaMatkul, sks, semester, hariKuliah, n);
 
         int pilihan;
         do {

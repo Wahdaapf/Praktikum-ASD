@@ -22,9 +22,9 @@ public class Praktikum13 {
             scanner.nextLine();
         }
 
-        double[] batasNilai = {80, 73, 65, 50, 0};
-        String[] nilaiHuruf = {"A", "B+", "B", "C", "D"};
-        double[] bobotNilai = {4.0, 3.5, 3.0, 2.0, 1.0};
+        double[] batasNilai = {80, 73, 65, 50, 39, 0};
+        String[] nilaiHuruf = {"A", "B+", "B", "C", "D", "E"};
+        double[] bobotNilai = {4.0, 3.5, 3.0, 2.5, 2.0, 1.0};
 
         int totalSKS = 0;
         double totalBobot = 0;
@@ -37,7 +37,7 @@ public class Praktikum13 {
             double bobot = 0.0;
             
             for (int j = 0; j < batasNilai.length; j++) {
-                if (nilaiAngkaMataKuliah[i] >= batasNilai[j]) {
+                if (nilaiAngkaMataKuliah[i] > batasNilai[j]) {
                     huruf = nilaiHuruf[j];
                     bobot = bobotNilai[j];
                     break;
@@ -50,6 +50,7 @@ public class Praktikum13 {
             totalBobot += bobot * sksMataKuliah[i];
         }
 
+        System.err.println(totalBobot + " " + totalSKS + "gahaga");
         double ipSemester = totalBobot / totalSKS;
 
         System.out.printf("\nIP Semester: %.2f\n", ipSemester);
