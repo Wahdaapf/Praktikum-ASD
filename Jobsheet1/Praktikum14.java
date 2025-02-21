@@ -1,17 +1,17 @@
 public class Praktikum14 {
     static int[][] stockBunga = {
-        {10, 5, 15, 7},  
-        {6, 11, 9, 12},  
-        {2, 10, 10, 5},  
-        {5, 7, 12, 9}    
-    };
+            {10, 5, 15, 7},  
+            {6, 11, 9, 12},  
+            {2, 10, 10, 5},  
+            {5, 7, 12, 9}    
+        };
 
-    // Harga per jenis bunga
-    static int[] hargaBunga = {75000, 50000, 60000, 10000};
+        // Harga per jenis bunga
+        static int[] hargaBunga = {75000, 50000, 60000, 10000};
 
-    static int[] bungaMati = {-1, -2, 0, -5};
+        static int[] bungaMati = {-1, -2, 0, -5};
 
-    public static void tampilkanPendapatan() {
+        public static void tampilkanPendapatan() {
         System.out.println("Pendapatan jika semua bunga terjual:");
         for (int i = 0; i < stockBunga.length; i++) {
             int totalPendapatan = 0;
