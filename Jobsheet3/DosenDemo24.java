@@ -6,7 +6,7 @@ public class DosenDemo24 {
 
         System.out.print("Masukkan jumlah dosen: ");
         int jumlahDosen = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine();
 
         Dosen24[] daftarDosen = new Dosen24[jumlahDosen];
 
@@ -26,7 +26,7 @@ public class DosenDemo24 {
 
             System.out.print("Usia         : ");
             int usia = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine();
 
             daftarDosen[i] = new Dosen24(kode, nama, jenisKelamin, usia);
         }
